@@ -78,7 +78,23 @@ hv.write(frames)
    Resolution was also a huge factor in the video-processing of this project. The video had to be a low resolution (640 x 480) in order for the Pi to properly process, as the CPU is considerably weaker than a laptop or a desktop computer. If the Pi could support a higher resolution, the detection abilities of the algorithm would also be greatly improved.
 
    For user defined functions, there are both benefits and disadvantages in using them. Using user defined functions allows the function to be used in a number of places without restrictions compared to stored packages. The code can also be simplified since it is usually mostly independent of other parameters. Parameters can be passed to the function easily and also revoked easier. On the other hand, it isn’t a good idea to use user defined functions because it limits the scope of data being analyzed which may result in inaccurate calculations. The parameters may or may not be accepted by the user defined function and, in some cases, data is lost. Allowing the code to analyze the data  with changing parameters is more likely to produce more accurate results. User defined functions also hinder the performance of the code because it gives the optimizer insufficient and possibly misleading information. Also, user defined functions consume relatively larger or even excessive amounts of memory usage since previous data needs to be stored and retrieved if needed further down in the code. In shorter projects, user defined functions may not display a clear difference in performance, but with threshold work, the performance rapidly decreases if user defined functions are used to analyze data. 
-   
+
+# Project Contributions
+McKenzie Cheung:
+* Interfacing and connecting to the Raspberry Pi
+* Modifying and writing additional code for the algorithm used
+* Recording and formatting videos used
+* Writing the report
+* Debugging
+
+Jessica Seto:
+* Recording and formatting videos used
+* Writing the report
+* Researching methods and approaches for this project
+* Debugging
+
+The work was split pretty evenly between the two partners for this project. The physical constraints of this project really only allowed one person to work at a time with the Pi, but it was an interesting project to approach and work on.
+
 # References
 [1] Optimal algorithm: http://www.coldvision.io/2017/03/23/vehicle-detection-using-opencv-svm-classifier/
 
