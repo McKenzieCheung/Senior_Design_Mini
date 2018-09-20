@@ -9,5 +9,33 @@ The algorithm we chose to use takes in the video and captures the frames from th
 `# Trained XML classifiers file for the cars
 cars_class = cv2.CascadeClassifier('cars.xml')`
 
-The algorithm then iterates over the frames in the video and converts them to grayscale. There are other methods that take this process and add another intermediary step, usually converting the image first into a binarized heatmap and then gray-scaling the image, but converting directly to grayscale is often the most efficient process. The algorithm would throw a processing error once the video completely ended, so we added a “try and except” statement to mitigate the error and notify the user when the video had ended. We then added a detection function to determine cars of various sizes, based on the gray-scaling classification from the .xml file. We also
+The algorithm then iterates over the frames in the video and converts them to grayscale. There are other methods that take this process and add another intermediary step, usually converting the image first into a binarized heatmap and then gray-scaling the image, but converting directly to grayscale is often the most efficient process. Based on the most promninent **white** shapes from the gray-scaled image, the algorithm is able to classify from the frame what is or is not a car.
 
+`gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)`
+
+The algorithm would throw consistently throw a processing error once the video completely ended, so we added a “try and except” statement to mitigate the error and notify the user when the video had ended. 
+
+`   try:
+        gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
+    except:
+        # When video ended, it would throw an error. This helps to overide the error once the video finishes running.
+        print("The video has ended.")
+        break`
+        
+The algorithm used a detection function to determine cars of various sizes, based on the gray-scaling classification from the .xml file. We added a line of code to show the number of cars detected. From the gray-scaling, the image is processed as a matrix of RGB values, where **0** stands for black and 
+
+` # Detects cars of different sizes
+    car_detect = cars_class.detectMultiScale(gray, 1.1, 1)
+    print("This is the number of cars: ", len(car_detect))`
+
+We also added a function to slow down the frames if the user wanted to see the video frame by frame in order to verify the accuracy of the number of cars counted.
+
+`# Slows down the frames for better detection - Can be commented out if needed for faster processing
+ time.sleep(1.0)`
+ 
+ The algorithm also draws a colored box over each detected car, which it determines again by which objects from the gray-scaled image are **white**. The **255** is the RGB code for white.
+ 
+ `# Draw rectangle over each car
+    num_cars = 0
+    for (x, y, w, h) in car_detect:
+        cv2.rectangle(frames, (x,y), (x+w, y+h), (0,0,255), 2)`
