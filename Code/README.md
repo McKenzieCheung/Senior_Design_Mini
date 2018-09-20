@@ -7,6 +7,8 @@
 * cars.xml
 
 **Sample videos from Raspberry Pi:**
+* cars_1.mp4
+* cars_3.mp4
 * cars_4.mp4
 * cars_5.mp4
 * cars_6.mp4
