@@ -16,8 +16,9 @@ The algorithm then iterates over the frames in the video and converts them to gr
 The algorithm would throw consistently throw a processing error once the video completely ended, so we added a “try and except” statement to mitigate the error and notify the user when the video had ended. 
 
 ``` 
-   try:                                                                                                                                         gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)       
-   except:                                                                                                                             
+   try: 
+        gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)       
+   except: 
         # When video ended, it would throw an error. This helps to overide the error once the video finishes running.         
         break
 ```
