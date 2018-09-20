@@ -35,7 +35,7 @@ Authors: McKenzie Cheung, Jessica Seto
     print("This is the number of cars: ", len(car_detect))
 ```    
 
-   We also added to the algorithm the ability to display the counter for each frame (its performance could certainly be optimized by the use of the time.sleep(1.0) function). 
+   We also added to the algorithm the ability to display the counter for each frame (its performance could certainly be optimized by the use of the ```time.sleep(1.0)``` function). 
 
 ```
 # Puts text on the frame
