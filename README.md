@@ -44,9 +44,6 @@ We also added a function to slow down the frames if the user wanted to see the v
  The algorithm also draws a colored box over each detected car, which it determines again by which objects from the gray-scaled image are **white**. The **255** is the RGB code for white.
  
  `# Draw rectangle over each car
- 
     num_cars = 0
-    
     for (x, y, w, h) in car_detect:
-    
         cv2.rectangle(frames, (x,y), (x+w, y+h), (0,0,255), 2)`
