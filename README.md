@@ -6,7 +6,7 @@ Authors: McKenzie Cheung, Jessica Seto
   
 The algorithm we chose to use takes in the video and captures the frames from the clip. Using a training data file (.xml), the algorithm is able to use classifiers based on the .xml file, which has been trained with images of cars. 
 
-`# Trained XML classifiers file for the cars<br/>
+`# Trained XML classifiers file for the cars\
 cars_class = cv2.CascadeClassifier('cars.xml')`
 
 The algorithm then iterates over the frames in the video and converts them to grayscale. There are other methods that take this process and add another intermediary step, usually converting the image first into a binarized heatmap and then gray-scaling the image, but converting directly to grayscale is often the most efficient process. Based on the most promninent **white** shapes from the gray-scaled image, the algorithm is able to classify from the frame what is or is not a car.
