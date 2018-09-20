@@ -12,4 +12,4 @@
 * cars_6.mp4
 
 **Video (cars_4.mp4) processed by Raspberry Pi:**
-* cars_1_new.avi (Video processed by
+* cars_1_new.avi
